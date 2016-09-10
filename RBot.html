@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+body{
+  background: #000;
+  padding-top: 10px;
+} 
+
+p{
+  color: lime; 
+  font-family: "Courier";
+  font-size: 20px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  overflow: hidden;
+  width: 60em;
+  
+  
+  animation: type 6s steps(120, end); 
+}
+
+p:nth-child(2){
+  animation: type2 8s steps(60, end);
+}
+
+p a{
+  color: lime;
+  text-decoration: none;
+}
+
+span{
+  animation: blink 1s infinite;
+}
+
+@keyframes type{ 
+  from { width: 0; } 
+} 
+
+@keyframes type2{
+  0%{width: 0;}
+  50%{width: 0;}
+  100%{ width: 100; } 
+} 
+
+@keyframes blink{
+  to{opacity: .0;}
+}
+
+::selection{
+  background: white;
+}
+</style>
+</head>
+<body>
+  <center><p id="quote"></p><center>
+<script id="jsbin-javascript">
+var quotes=new Array();
+quotes[0] = "Nick, stop doing that.";
+quotes[1] = "You know whats a terrible name? ... xFrostwind.";
+quotes[2] = "Stop reading all the messages in the first day.";
+quotes[3] = "You're all great friends but you're all terrible. \r\n Just terrible.";
+quotes[4] = "Pink warding is Chapter 3 in my new book, \r\n \"Everything I say is right\"";
+quotes[5] = "That reminds me ... *trails off inaudiblely";
+quotes[6] = "Why is this lane so hard?";
+quotes[7] = "I swear to fucking god, Jimmy...";
+quotes[8] = "This is my impression of Jimmy ganking.";
+quotes[9] = "Why doesn't Popeyes do delivery?";
+quotes[10] = "Thats my AD Carry.";
+quotes[11] = "How the fuck did you get an S-?";
+quotes[12] = "Wait up young blood.";
+quotes[13] = "Back in my day... junglers were actually useful.";
+quotes[14] = "*mummers*";
+quotes[15] = "Thats my AD Carry.";
+quotes[16] = "You know, Mountain dragon is the best dragon.";
+quotes[17] = "It's okay, it's just an air dragon.";
+quotes[18] = "Why are you never with us?";
+quotes[19] = "Great call Richie ... I know right? Thanks.";
+quotes[20] = "Dicks out for Harambe.";
+quotes[21] = "Dude, if League was a piano, I would be a nine-year old chinese girl.";
+
+var q = quotes.length;
+var whichquote=Math.round(Math.random()*(q-1));
+
+function showquote(){
+    document.getElementById('quote').innerHTML = quotes[whichquote];
+    document.getElementsByTagName('img')[whichquote].style.display="block";
+}
+showquote();
+</script>
+</body>
+</html>
